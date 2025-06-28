@@ -15,7 +15,7 @@ The **Product Search App** is an intelligent e-commerce assistant built using La
 
 Check out the demo video to see the app in action:
 
-![](assets/product_search.gif)
+![](assests/product_search.gif)
 
 
 ## Installation
