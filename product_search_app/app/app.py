@@ -1,7 +1,6 @@
 import streamlit as st
 from pydantic import BaseModel, Field
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import JsonOutputParser
 from langchain_groq import ChatGroq
 import os
 from dotenv import load_dotenv
@@ -110,12 +109,12 @@ if st.button("Search"):
             st.markdown(
                 f"""
                 <div class="product-card">
-                    <p><strong>Product Name:</strong> {response.get('product_name', 'No product found')}</p>
-                    <p><strong>Brand:</strong> {response.get('brand', 'No brand found')}</p>
-                    <p><strong>Model:</strong> {response.get('model', 'No model found')}</p>
-                    <p><strong>Specifications:</strong> {response.get('specs', 'No specifications found')}</p>
-                    <p><strong>Price:</strong> {response.get('price', 'No price found')}</p>
-                    <p><strong>🔗 <a href="{response.get('link', '#')}" target="_blank">Product Link</a></strong></p>
+                    <p><strong>Product Name:</strong> {response.product_name or 'N/A'}</p>
+                    <p><strong>Brand:</strong> {response.brand or 'N/A'}</p>
+                    <p><strong>Model:</strong> {response.model or 'N/A'}</p>
+                    <p><strong>Specifications:</strong> {response.specs or 'N/A'}</p>
+                    <p><strong>Price:</strong> {response.price or 'N/A'}</p>
+                    <p><strong>🔗 <a href="{response.link or '#'}" target="_blank">Product Link</a></strong></p>
                 </div>
                 """,
                 unsafe_allow_html=True,

@@ -1,0 +1,38 @@
+# Requirements for Travel Planning Application
+
+# Core frameworks
+streamlit>=1.28.0
+pydantic>=2.0.0
+pandas>=2.0.0
+
+# LangChain ecosystem
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-google-genai>=1.0.0
+langchain-core>=0.1.0
+
+# LangGraph for StateGraph workflow
+langgraph>=0.0.20
+langsmith>=0.0.70
+
+# API integrations
+google-generativeai>=0.3.0
+duckduckgo-search>=3.9.0
+
+# PDF generation (choose one or both)
+fpdf2>=2.7.0  # Simple, lightweight PDF generation
+reportlab>=4.0.0  # Advanced PDF features (optional)
+openweathermap>=1.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# PDF generation
+reportlab>=4.0.0
+
+# Development dependencies (optional)
+pytest>=7.4.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0

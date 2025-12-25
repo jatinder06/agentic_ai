@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  milvus:
+    image: milvusdb/milvus:v2.5.12-20250519-043e3332-arm64
+    command: ["milvus", "run", "standalone"]
+    environment:
+      - ETCD_USE_EMBED=true
+      - MINIO_USE_EMBED=true
+      - COMMON_STORAGETYPE=local
+      - KNOWHERE_USE_BLAS_THRESHOLD=0
+    volumes:
+      - ./milvus_data:/var/lib/milvus
+    ports:
+      - "19530:19530"
+    deploy:
+      resources:
+        limits:
+          memory: 3g
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+
+volumes:
+  milvus_data:
+    driver: local
